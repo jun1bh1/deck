@@ -1,0 +1,169 @@
+:root {
+  font-size: 0.0520833333333333vw;
+}
+
+/* img 태그 드래그 막기 */
+img {
+  -webkit-user-drag: none;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  z-index: -1;
+  border: none;
+}
+
+.inner {
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  max-width: $maxWidth;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* overflow: overlay; 
+  max-width: $maxWidth; */
+  font-family: $fontBase;
+  background-color: $colorBackground10;
+  font-size: 16px;
+  font-weight: 500;
+  // min-width: $minWidth;
+  margin: 0 auto;
+}
+
+.font-base1 {
+  font-size: $fontSizeBase1;
+}
+
+.font-base2 {
+  font-size: $fontSizeBase2;
+}
+
+.font-base3 {
+  font-size: $fontSizeBase3;
+}
+.font-base4 {
+  font-size: $fontSizeBase4;
+}
+
+.font-large1 {
+  font-size: $fontSizeLarge1;
+  font-weight: bold;
+}
+
+.font-large2 {
+  font-size: $fontSizeLarge2;
+  font-family: $fontTitle;
+}
+
+.gray-b10 {
+  color: $colorBackground10
+}
+
+.gray-b9 {
+  color: $colorBackground9
+}
+
+.gray-b8 {
+  color: $colorBackground8
+}
+
+.gray-b7 {
+  color: $colorBackground7
+}
+
+.gray-b6 {
+  color: $colorBackground6
+}
+
+.gray-b5 {
+  color: $colorBackground5
+}
+
+.gray-b4 {
+  color: $colorBackground4
+}
+
+.gray-b3 {
+  color: $colorBackground3
+}
+
+.gray-b2 {
+  color: $colorBackground2
+}
+
+.gray-b1 {
+  color: $colorBackground1
+}
+
+.gray-b0 {
+  color: $colorBackground0
+}
+
+
+.gray-f10 {
+  color: $colorForeground10
+}
+
+.gray-f9 {
+  color: $colorForeground9
+}
+
+.gray-f8 {
+  color: $colorForeground8
+}
+
+.gray-f7 {
+  color: $colorForeground7
+}
+
+.gray-f6 {
+  color: $colorForeground6
+}
+
+.gray-f5 {
+  color: $colorForeground5
+}
+
+.gray-f4 {
+  color: $colorForeground4
+}
+
+.gray-f3 {
+  color: $colorForeground3
+}
+
+.gray-f2 {
+  color: $colorForeground2
+}
+
+.gray-f1 {
+  color: $colorForeground1
+}
+
+.gray-f0 {
+  color: $colorForeground0
+}
+
+// 1281~1920에서는 vw, rem을 사용하여 내부 요소의 사이즈를 조절하여 전체적인 디자인이 동일한 느낌을 주도록 함
+// 1281보다 작아지거나 1290보다 커지면 요소의 사이즈를 고정하여 요소가 너무 작아지거나 커지는것을 방지하여 가독성을 살림
+@media (max-width: 1281px) {
+  :root {
+    font-size: 0.6666666666666667px;
+  }
+}
+
+@media (min-width:1921px) {
+  :root {
+    font-size: 1px;
+  }
+}
+
+// 1024는 태블릿 사이즈로 요소의 변경이 들어감

@@ -1,0 +1,67 @@
+/* 글씨크기 : em, 프리셋 바디에서 16px로 잡아서 16px를 기준으로 직관적으로 크기를 가늠할 수 있음
+고정크기 : px, 랩퍼의 높이, 요소의 크기, 클릭 요소의 패딩
+반응형크기 : rem, vw를 기준으로 최대최소 설정한 넓이 내에서 변동 섹션의 크기, 요소의 넓이, 요소간 패딩, 마진 */
+.header-frame {
+  width: 100%;
+  // min-width: $minWidth;
+  position: absolute;
+  z-index: 99;
+
+  .header-wrap {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    padding: 0 $mainPadding;
+    justify-content: space-between;
+
+    .header-logo-link img {
+      width: 136px;
+    }
+
+    .header-navigation {
+
+      height: 100%;
+      flex: 1;
+
+      .header-navigation-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 64rem;
+        font-size: 16px;
+
+        a {
+          display: block;
+          font-size: $fontSizeBase2;
+          color: white;
+          transition: 300ms;
+          padding: $clickPadding;
+          box-sizing: border-box;
+
+          &:hover {
+            color: $colorAccent1
+          }
+        }
+      }
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 54rem;
+
+      .icon {
+        width: 30px;
+        height: 30px;
+
+        path {
+          transition: 300ms;
+        }
+
+        &:hover path {
+          fill: $colorAccent1
+        }
+      }
+    }
+  }
+}

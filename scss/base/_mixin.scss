@@ -1,0 +1,105 @@
+@mixin ellipse($lineHeight: 10px, $line: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if($line > 1) {
+    line-height: $lineHeight;
+    max-height: $lineHeight * $line;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+  }
+
+  @else {
+    white-space: nowrap;
+  }
+}
+
+@mixin positionCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin sliderButton {
+  .btn-next {
+    width: 100px;
+    height: 100px;
+    background-image: url(/images/Arrow_forward.svg);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    transition: 300ms;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .btn-prev {
+    width: 100px;
+    height: 100px;
+    background-image: url(/images/Arrow_back.svg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    transition: 300ms;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+}
+
+@mixin indicator {
+  .indicator {
+    position: absolute;
+    width: 100%;
+    bottom: calc(48rem - $clickPadding);
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    z-index: 99;
+
+    .indicator-btn {
+      display: block;
+      padding: $clickPadding 0;
+
+      i {
+        display: block;
+        width: 60px;
+        height: 6px;
+        background: white;
+        opacity: 0.5;
+        border-radius: 3px;
+        transition: 300ms;
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent;
+        background-clip: padding-box;
+      }
+
+      &:hover {
+        i {
+          border-color: white;
+          opacity: 0.5;
+        }
+      }
+
+      &.selected {
+        i {
+          border-color: white;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
