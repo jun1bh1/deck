@@ -61,7 +61,7 @@
   .indicator {
     position: absolute;
     width: 100%;
-    bottom: calc(48rem - $clickPadding);
+    bottom: calc(48rem - var(--click-padding));
     left: 0;
     right: 0;
     display: flex;
@@ -71,7 +71,7 @@
 
     .indicator-btn {
       display: block;
-      padding: $clickPadding 0;
+      padding: var(--click-padding) 0;
 
       i {
         display: block;

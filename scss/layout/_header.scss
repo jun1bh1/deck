@@ -11,36 +11,44 @@
     height: 68px;
     display: flex;
     align-items: center;
-    padding: 0 $mainPadding;
+    padding: 0 var(--main-padding);
     justify-content: space-between;
+    z-index: 3;
 
     .header-logo-link img {
       width: 136px;
+      z-index: 99;
+      z-index: 2;
     }
 
     .header-navigation {
-
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
-      flex: 1;
+      z-index: 1;
 
       .header-navigation-container {
-        height: 100%;
+        width: 100%;
+        height: fit-content;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 64rem;
         font-size: 16px;
+        position: absolute;
+        visibility: hidden;
 
         a {
+          line-height: 68px;
           display: block;
-          font-size: $fontSizeBase2;
           color: white;
           transition: 300ms;
-          padding: $clickPadding;
           box-sizing: border-box;
 
           &:hover {
-            color: $colorAccent1
+            color: var(--color-accent1);
           }
         }
       }
@@ -49,6 +57,8 @@
     .header-icons {
       display: flex;
       gap: 54rem;
+      position: relative;
+      z-index: 2;
 
       .icon {
         width: 30px;
@@ -59,9 +69,73 @@
         }
 
         &:hover path {
-          fill: $colorAccent1
+          color: var(--color-accent1);
         }
       }
+
+      .icon-menu {
+        color: white;
+        display: none;
+
+        i {
+          width: 30px;
+          height: 30px;
+          transition: 300ms;
+
+          &:hover {
+            color: var(--color-accent1);
+          }
+        }
+      }
+    }
+  }
+
+  .visual-slider-top-gradation {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400%;
+    background: linear-gradient(0deg,
+        rgba(#000, 0),
+        rgba(#000, 0.7));
+    z-index: 1;
+  }
+}
+
+@media (max-width : 1024px) {
+  .header-frame {
+    .header-wrap {
+      .header-navigation {
+        top: 68px;
+
+        .header-navigation-container {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          position: relative;
+          background-color: rgba($color: #000, $alpha: 0.8);
+        }
+      }
+
+      .header-icons {
+        .icon {
+          &.icons-cart {
+            display: none;
+          
+          }
+        }
+
+        .icon-menu {
+          display: initial;
+        }
+      }
+    }
+
+    .visual-slider-top-gradation {
+      height: 100%;
+      background: rgba($color: #000000, $alpha: 0.8);
     }
   }
 }

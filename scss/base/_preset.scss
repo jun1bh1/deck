@@ -1,5 +1,49 @@
 :root {
   font-size: 0.0520833333333333vw;
+  --laptop: 1024px;
+  --mobile: 768px;
+  --max-width: 1920px;
+  --main-padding: 80rem;
+  --sub-padding: 40rem;
+  --click-padding: 8px;
+  --section-spacing: 180px;
+  --font-size-large2: 128rem;
+  --font-size-large1: 64rem;
+  --font-size-base4: 2em;
+  --font-size-base3: 1.5em;
+  --font-size-base2: 1.125em;
+  --font-size-base1: 1em;
+  --color-accent1: #EA7178;
+  --color-accent2: #7799CC;
+  --color-black00: #000;
+  --color-black22: #222;
+  --color-white: #fff;
+  --color-gray88: #888;
+  --color-grayF4: #f4f4f4;
+  --color-background10: #FFFFFF;
+  --color-background9: #F5F5F5;
+  --color-background8: #EAEAEA;
+  --color-background7: #E0E0E0;
+  --color-background6: #D6D6D6;
+  --color-background5: #C1C1C1;
+  --color-background4: #ADADAD;
+  --color-background3: #989898;
+  --color-background2: #838383;
+  --color-background1: #6F6F6F;
+  --color-background0: #5A5A5A;
+  --color-foreground10: #000000;
+  --color-foreground9: #080808;
+  --color-foreground8: #1C1C1C;
+  --color-foreground7: #313131;
+  --color-foreground6: #454545;
+  --color-foreground5: #5A5A5A;
+  --color-foreground4: #6F6F6F;
+  --color-foreground3: #838383;
+  --color-foreground2: #989898;
+  --color-foreground1: #ADADAD;
+  --color-foreground0: #C1C1C1;
+  --font-title: 'Black Han Sans', sans-serif;
+  --font-base: 'Noto Sans KR', sans-serif;
 }
 
 /* img 태그 드래그 막기 */
@@ -22,7 +66,7 @@ img {
   margin-right: auto;
   margin-left: auto;
   position: relative;
-  max-width: $maxWidth;
+  max-width: var(--max-width);
   box-sizing: border-box;
 }
 
@@ -30,8 +74,8 @@ html,
 body {
   /* overflow: overlay; 
   max-width: $maxWidth; */
-  font-family: $fontBase;
-  background-color: $colorBackground10;
+  font-family: var(--font-base);
+  background-color: var(--color-background10);
   font-size: 16px;
   font-weight: 500;
   // min-width: $minWidth;
@@ -39,131 +83,137 @@ body {
 }
 
 .font-base1 {
-  font-size: $fontSizeBase1;
+  font-size: var(--font-size-base1);
 }
 
 .font-base2 {
-  font-size: $fontSizeBase2;
+  font-size: var(--font-size-base2);
 }
 
 .font-base3 {
-  font-size: $fontSizeBase3;
+  font-size: var(--font-size-base3);
 }
+
 .font-base4 {
-  font-size: $fontSizeBase4;
+  font-size: var(--font-size-base4);
 }
 
 .font-large1 {
-  font-size: $fontSizeLarge1;
+  font-size: var(--font-size-large1);
   font-weight: bold;
 }
 
 .font-large2 {
-  font-size: $fontSizeLarge2;
-  font-family: $fontTitle;
+  font-size: var(--font-size-large2);
+  font-family: var(--font-title);
 }
 
 .gray-b10 {
-  color: $colorBackground10
+  color: var(--color-background10);
 }
 
 .gray-b9 {
-  color: $colorBackground9
+  color: var(--color-background9);
 }
 
 .gray-b8 {
-  color: $colorBackground8
+  color: var(--color-background8);
 }
 
 .gray-b7 {
-  color: $colorBackground7
+  color: var(--color-background7);
 }
 
 .gray-b6 {
-  color: $colorBackground6
+  color: var(--color-background6);
 }
 
 .gray-b5 {
-  color: $colorBackground5
+  color: var(--color-background5);
 }
 
 .gray-b4 {
-  color: $colorBackground4
+  color: var(--color-background4);
 }
 
 .gray-b3 {
-  color: $colorBackground3
+  color: var(--color-background3);
 }
 
 .gray-b2 {
-  color: $colorBackground2
+  color: var(--color-background2);
 }
 
 .gray-b1 {
-  color: $colorBackground1
+  color: var(--color-background1);
 }
 
 .gray-b0 {
-  color: $colorBackground0
+  color: var(--color-background0);
 }
 
 
 .gray-f10 {
-  color: $colorForeground10
+  color: var(--color-foreground10);
 }
 
 .gray-f9 {
-  color: $colorForeground9
+  color: var(--color-foreground9);
 }
 
 .gray-f8 {
-  color: $colorForeground8
+  color: var(--color-foreground8);
 }
 
 .gray-f7 {
-  color: $colorForeground7
+  color: var(--color-foreground7);
 }
 
 .gray-f6 {
-  color: $colorForeground6
+  color: var(--color-foreground6);
 }
 
 .gray-f5 {
-  color: $colorForeground5
+  color: var(--color-foreground5);
 }
 
 .gray-f4 {
-  color: $colorForeground4
+  color: var(--color-foreground4);
 }
 
 .gray-f3 {
-  color: $colorForeground3
+  color: var(--color-foreground3);
 }
 
 .gray-f2 {
-  color: $colorForeground2
+  color: var(--color-foreground2);
 }
 
 .gray-f1 {
-  color: $colorForeground1
+  color: var(--color-foreground1);
 }
 
 .gray-f0 {
-  color: $colorForeground0
+  color: var(--color-foreground0);
 }
 
 // 1281~1920에서는 vw, rem을 사용하여 내부 요소의 사이즈를 조절하여 전체적인 디자인이 동일한 느낌을 주도록 함
-// 1281보다 작아지거나 1290보다 커지면 요소의 사이즈를 고정하여 요소가 너무 작아지거나 커지는것을 방지하여 가독성을 살림
-@media (max-width: 1281px) {
+// 1280보다 작아지거나 1290보다 커지면 요소의 사이즈를 고정하여 요소가 너무 작아지거나 커지는것을 방지하여 가독성을 살림
+@media (max-width : 1280px) {
   :root {
     font-size: 0.6666666666666667px;
   }
 }
 
-@media (min-width:1921px) {
+@media (min-width : 1920px) {
   :root {
     font-size: 1px;
   }
 }
 
 // 1024는 태블릿 사이즈로 요소의 변경이 들어감
+@media (max-width : 1024px) {
+  :root {
+    --main-padding: 24px;
+  }
+}

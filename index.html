@@ -17,7 +17,7 @@
   <!--jQuery-ui 소스삽입 (animation 기능, 다양한 ui component)  cdnjs 플러그인 사용 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="script/main.js"></script>
-  </script>
+  <script src="https://kit.fontawesome.com/a463d2829e.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="header-frame">
@@ -29,15 +29,15 @@
       </h1>
       <nav class="header-navigation">
         <ul class="header-navigation-container">
-          <li><a href="#" id="navigation-link1">키보드</a></li>
-          <li><a href="#" id="navigation-link2">커스텀</a></li>
-          <li><a href="#" id="navigation-link3">악세서리</a></li>
-          <li><a href="#" id="navigation-link4">고객지원</a></li>
+          <li><a href="#" id="navigation-link1" class="font-base2">키보드</a></li>
+          <li><a href="#" id="navigation-link2" class="font-base2">커스텀</a></li>
+          <li><a href="#" id="navigation-link3" class="font-base2">악세서리</a></li>
+          <li><a href="#" id="navigation-link4" class="font-base2">고객지원</a></li>
         </ul>
       </nav>
       <div class="header-icons">
         <a href="#" class="icon icons-search" title="고객 메뉴 이동">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_35_352)">
               <path
                 d="M20.3674 18.2233H19.2381L18.8379 17.8373C20.2387 16.2078 21.082 14.0923 21.082 11.791C21.082 6.65952 16.9225 2.5 11.791 2.5C6.65952 2.5 2.5 6.65952 2.5 11.791C2.5 16.9225 6.65952 21.082 11.791 21.082C14.0923 21.082 16.2078 20.2387 17.8373 18.8379L18.2233 19.2381V20.3674L25.3702 27.5L27.5 25.3702L20.3674 18.2233ZM11.791 18.2233C8.23185 18.2233 5.35878 15.3502 5.35878 11.791C5.35878 8.23185 8.23185 5.35878 11.791 5.35878C15.3502 5.35878 18.2233 8.23185 18.2233 11.791C18.2233 15.3502 15.3502 18.2233 11.791 18.2233Z"
@@ -78,8 +78,10 @@
             </defs>
           </svg>
         </a>
+        <a href="#" class="icon-menu"><i class="icon fa-solid fa-bars fa-2x"></i></a>
       </div>
     </div>
+    <i class="visual-slider-top-gradation"></i>
   </header>
   <main class="main-frame">
     <div class="visual-wrap">
@@ -87,13 +89,13 @@
       <ul id="visualIndicatorList" class="visual-indicator-list indicator"></ul>
       <button class="btn-prev" title="비주얼 이전"></button>
       <button class="btn-next" title="비주얼 다음"></button>
-      <div class="visual-slider-top-gradation"></div>
+      <!-- <div class="visual-slider-top-gradation"></div> -->
     </div>
     <section class="content1-wrap inner">
       <div class="content1-left-margin">
         <ul class="content1-title-list">
           <li><a href="#" title="컨텐츠1 아이템 태그 필터링" class="limited">#월 한정수량</a></li>
-          <li><a href="#" title="컨텐츠1 아이템 태그 필터링" class="10key">#풀배열</a></li>
+          <li><a href="#" title="컨텐츠1 아이템 태그 필터링" class="10key">#풀 배열</a></li>
           <li><a href="#" title="컨텐츠1 아이템 태그 필터링" class="10keyless">#텐키리스</a></li>
           <li><a href="#" title="컨텐츠1 아이템 태그 필터링" class="cherry">#체리축</a></li>
           <li><a href="#" title="컨텐츠1 아이템 태그 필터링" class="other">#특주측</a></li>
@@ -139,8 +141,10 @@
       </div>
     </section>
     <section class="content3-wrap inner">
-      <div id="content3OuterWrap" class="content3-outer-wrap">
-      </div>
+     <div class="content3-rec-wrap">
+        <div id="content3OuterWrap" class="content3-outer-wrap">
+        </div>
+     </div>
     </section>
     <footer>
       <div class="footer-top-wrap">

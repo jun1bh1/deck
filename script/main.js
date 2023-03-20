@@ -244,7 +244,10 @@ $(document).ready(function () {
     content2_1ImgList.append('<li><img src="' + content2_1ObjArr[i].imgSrc + '" alt="거북선 이미지-' + (i + 1) + '" class="content2-img"></li>')
     content2_1SubImgList.append('<li><img src="' + content2_1ObjArr[i].subImgSrc + '" alt="거북선 서브이미지-' + (i + 1) + '" class="content2-sub-img"></li>')
     content2_1IndicatorList.append('<li><button class="indicator-btn" title="컨텐트2-1 인디케이터 ' + (i + 1) + '"><i></i></button></li>')
-    content2_1TextList.append('<li><span class="text-title grayf10 font-base3">' + content2_1ObjArr[i].title + '</span><span class="text-detail grayf10 font-large1">' + content2_1ObjArr[i].detail + '</span><a class="more-box" href="' + content2_1ObjArr[i].link + '" title="컨텐츠1 링크이동"><span class="more-text font-base1">자세히보기</span></a></li>')
+    content2_1TextList.append('<li></li>')
+    content2_1TextList.children('li').eq(i).append('<span class="content2-text text-title font-base3">' + content2_1ObjArr[i].title + '</span>')
+    content2_1TextList.children('li').eq(i).append('<span class="content2-text text-detail font-large1">' + content2_1ObjArr[i].detail + '</span>')
+    content2_1TextList.children('li').eq(i).append('<a class="more-box" href="' + content2_1ObjArr[i].link + '" title="컨텐츠1 링크이동"><span class="more-text font-base1">자세히보기</span></a>')
   }
 
   var content2_2ImgList = $('#content2_2ImgList')
@@ -253,7 +256,7 @@ $(document).ready(function () {
   for (var i = 0; i < content2_2ObjArr.length; i++) {
     content2_2ImgList.append('<li><img src="' + content2_2ObjArr[i].imgSrc + '" alt="거북선 이미지-' + (i + 1) + '" class="content2-img"></li>')
     content2_2IndicatorList.append('<li><button class="indicator-btn" title="컨텐트2-1 인디케이터 ' + (i + 1) + '"><i></i></button></li>')
-    content2_2TextList.append('<li><span class="text-title grayf10 font-base3">' + content2_2ObjArr[i].title + '</span><span class="text-detail grayf10 font-large1">' + content2_2ObjArr[i].detail + '</span><a class="more-box" href="' + content2_2ObjArr[i].link + '" title="컨텐츠1 링크이동"><span class="more-text font-base1">자세히보기</span></a></li>')
+    content2_2TextList.append('<li><span class="content2-text text-title grayf10 font-base3">' + content2_2ObjArr[i].title + '</span><span class="content2-text text-detail grayf10 font-large1">' + content2_2ObjArr[i].detail + '</span><a class="more-box" href="' + content2_2ObjArr[i].link + '" title="컨텐츠1 링크이동"><span class="more-text font-base1">자세히보기</span></a></li>')
   }
 
   var content2_3ImgList = $('#content2_3ImgList')
@@ -262,18 +265,8 @@ $(document).ready(function () {
   for (var i = 0; i < content2_3ObjArr.length; i++) {
     content2_3ImgList.append('<li><img src="' + content2_3ObjArr[i].imgSrc + '" alt="거북선 이미지-' + (i + 1) + '" class="content2-img"></li>')
     content2_3IndicatorList.append('<li><button class="indicator-btn" title="컨텐트2-1 인디케이터 ' + (i + 1) + '"><i></i></button></li>')
-    content2_3TextList.append('<li><span class="text-title grayf10 font-base3">' + content2_3ObjArr[i].title + '</span><span class="text-detail grayf10 font-large1">' + content2_3ObjArr[i].detail + '</span><a class="more-box" href="' + content2_3ObjArr[i].link + '" title="컨텐츠1 링크이동"><span class="more-text font-base1">자세히보기</span></a></li>')
+    content2_3TextList.append('<li><span class="content2-text text-title grayf10 font-base3">' + content2_3ObjArr[i].title + '</span><span class="content2-text text-detail grayf10 font-large1">' + content2_3ObjArr[i].detail + '</span><a class="more-box" href="' + content2_3ObjArr[i].link + '" title="컨텐츠1 링크이동"><span class="more-text font-base1">자세히보기</span></a></li>')
   }
-
-  var content2_3ImgList = $('#content2_3ImgList')
-  var content2_3IndicatorList = $('#content2_3IndicatorList')
-  var content2_3TextList = $('#content2_3TextList')
-  for (var i = 0; i < content2_3ObjArr.length; i++) {
-    content2_3ImgList.append('<li><img src="' + content2_3ObjArr[i].imgSrc + '" alt="거북선 이미지-' + (i + 1) + '" class="content2-img"></li>')
-    content2_3IndicatorList.append('<li><button class="indicator-btn" title="컨텐트2-1 인디케이터 ' + (i + 1) + '"><i></i></button></li>')
-    content2_3TextList.append('<li><span class="text-title grayf10 font-base3">' + content2_3ObjArr[i].title + '</span><span class="text-detail grayf10 font-large1">' + content2_3ObjArr[i].detail + '</span><a class="more-box" href="' + content2_3ObjArr[i].link + '" title="컨텐츠1 링크이동"><span class="more-text font-base1">자세히보기</span></a></li>')
-  }
-
 
   var content3OuterWrap = $('#content3OuterWrap')
   for (let i = 0; i < content3Data.length; i++) {
@@ -403,6 +396,11 @@ $(window).load(function () {
     //   opacity: 0
     // }, baseAnimationTime, 'easeInOutCirc')
   }
+
+  // 비주얼 모바일 사이즈 
+  $('.icon-menu').on('click', function () {
+    $('.header-navigation-container').slideToggle()
+  })
 
   // 컨텐츠1
   // 드래그 시작시 y축 위치
@@ -652,8 +650,23 @@ $(window).load(function () {
       }
       slider.stop().animate({ left: -100 * (index) + '%' }, time)
       fade.stop(true).fadeOut(time)
-      fade.eq(index).stop().delay(time / 2).fadeIn(time)
+      fade.eq(index)..stop().delay(time / 2).fadeIn(time)
       fade.eq(index + lastIndex).stop().delay(time / 2).fadeIn(time)
+      // fade.not(index).stop(true).animate({
+      //   'opacity': 0
+      // }, time, function () {
+      //   $(this).css({ 'display': 'none' })
+      // })
+      // // fade.eq(index).css({
+      // //   'display': 'flex'
+      // // }).stop().delay(time / 2).animate({ 'opacity': 1}, time)
+      // fade.eq(index).stop().delay(time / 2).animate({ 'opacity': 1}, time)
+      // // fade.eq(index + lastIndex).stop().delay(time / 2).animate({ 'opacity': 1}, time)
+      // // fade.eq(index + lastIndex).delay(time / 2).css({
+      // //   'display': 'flex'
+      // // }, function () {
+      // //   $(this).animate({ 'display': 'flex' })
+      // // }, time)
     }
   }
 })
@@ -666,10 +679,13 @@ window.addEventListener('resize', function () {
 // 스크롤바 좌우 제한 함수
 function scrollBarContainment() {
   var scrollBar = $('#content1ScrollBar')
+  var content1List = $('#content1List')
   // 스크롤바 최소 왼쪽 끝
   var containmentX1 = scrollBar.parent().offset().left
   // 스크롤바 최대 왼쪽 끝
   var containmentX2 = scrollBar.parent().outerWidth() + scrollBar.parent().offset().left - scrollBar.outerWidth() + 20
   // 스크롤바 드래그의 containment 값을 넣어줌, 스크롤바는 부모의 넓이를 벗어나지 말아야함 
   scrollBar.draggable("option", "containment", [containmentX1, 0, containmentX2, 0]);
+  scrollBar.css({ 'left': 0 })
+  content1List.css({ 'left': 0 })
 }
