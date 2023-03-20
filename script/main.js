@@ -650,7 +650,7 @@ $(window).load(function () {
       }
       slider.stop().animate({ left: -100 * (index) + '%' }, time)
       fade.stop(true).fadeOut(time)
-      fade.eq(index)..stop().delay(time / 2).fadeIn(time)
+      fade.eq(index).stop().delay(time / 2).fadeIn(time)
       fade.eq(index + lastIndex).stop().delay(time / 2).fadeIn(time)
       // fade.not(index).stop(true).animate({
       //   'opacity': 0
