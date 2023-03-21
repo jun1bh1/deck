@@ -15,6 +15,7 @@
   }
 }
 
+
 @mixin positionCenter {
   position: absolute;
   top: 50%;
@@ -24,14 +25,15 @@
 
 @mixin sliderButton {
   .btn-next {
-    width: 100px;
-    height: 100px;
+    width: 100rem;
+    height: 100rem;
     background-image: url(/images/Arrow_forward.svg);
+    background-size: cover;
     position: absolute;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    opacity: 0.5;
+    opacity: 0.7;
     transition: 300ms;
 
     &:hover {
@@ -40,14 +42,15 @@
   }
 
   .btn-prev {
-    width: 100px;
-    height: 100px;
+    width: 100rem;
+    height: 100rem;
     background-image: url(/images/Arrow_back.svg);
+    background-size: cover;
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    opacity: 0.5;
+    opacity: 0.7;
     transition: 300ms;
 
     &:hover {
@@ -66,7 +69,7 @@
     right: 0;
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 16rem;
     z-index: 99;
 
     .indicator-btn {
@@ -75,13 +78,13 @@
 
       i {
         display: block;
-        width: 60px;
-        height: 6px;
+        width: 60rem;
+        height: calc(2px + 4rem);
         background: white;
         opacity: 0.5;
-        border-radius: 3px;
+        border-radius: 3rem;
         transition: 300ms;
-        border-width: 1px;
+        border-width: 1rem;
         border-style: solid;
         border-color: transparent;
         background-clip: padding-box;
