@@ -5,14 +5,15 @@
   --max-width: 1920px;
   --main-padding: 80rem;
   --sub-padding: 40rem;
-  --click-padding: 8px;
-  --section-spacing: 180px;
+  --click-padding: 4px;
+  --section-spacing: 180rem;
   --font-size-large2: 128rem;
   --font-size-large1: 64rem;
-  --font-size-base4: 2em;
-  --font-size-base3: 1.5em;
-  --font-size-base2: 1.125em;
-  --font-size-base1: 1em;
+  --font-size-base5: 48rem;
+  --font-size-base4: 32rem;
+  --font-size-base3: calc(8px + 16rem);
+  --font-size-base2: calc(8px + 10rem);
+  --font-size-base1: calc(8px + 8rem);
   --color-accent1: #EA7178;
   --color-accent2: #7799CC;
   --color-black00: #000;
@@ -197,11 +198,15 @@ body {
   color: var(--color-foreground0);
 }
 
+@function customRem4To6($size) {
+  @return calc(($size * 4 / 10 * 1px) + ($size * 6 / 10 * 1rem))
+}
+
 // 1281~1920에서는 vw, rem을 사용하여 내부 요소의 사이즈를 조절하여 전체적인 디자인이 동일한 느낌을 주도록 함
-// 1280보다 작아지거나 1290보다 커지면 요소의 사이즈를 고정하여 요소가 너무 작아지거나 커지는것을 방지하여 가독성을 살림
-@media (max-width : 1280px) {
+// 960보다 작아지거나 1920보다 커지면 요소의 사이즈를 고정하여 요소가 너무 작아지거나 커지는것을 방지하여 가독성을 살림
+@media (max-width : 960px) {
   :root {
-    font-size: 0.6666666666666667px;
+    font-size: 0.5px;
   }
 }
 
@@ -214,6 +219,6 @@ body {
 // 1024는 태블릿 사이즈로 요소의 변경이 들어감
 @media (max-width : 1024px) {
   :root {
-    --main-padding: 24px;
+    --main-padding: 18rem;
   }
 }

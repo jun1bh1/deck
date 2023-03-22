@@ -8,6 +8,22 @@
   overflow: hidden;
 }
 
+
+.more-box {
+  display: block;
+  margin-top: 32rem;
+  transition: 500ms;
+  width: customRem4To6(190);
+  height: customRem4To6(50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .more-text {
+    transition: 500ms;
+  }
+}
+
 .visual-wrap {
   width: 100%;
   height: 900rem;
@@ -94,6 +110,8 @@
             width: 100%;
             text-align: center;
             margin-bottom: 24rem;
+            padding: 0 var(--main-padding);
+            box-sizing: border-box;
             opacity: 0;
             transform: translateX(-20%);
             transition: 400ms;
@@ -134,7 +152,7 @@
       li {
         a {
           font-size: var(--font-size-base3);
-          color: black;
+          color: var(--color-foreground10);
           font-weight: bold;
           transition: 0;
         }
@@ -189,12 +207,24 @@
 
           .content1-text-wrap {
             width: 100%;
-            margin-top: 24px;
+            margin-top: 24rem;
             height: auto;
             display: flex;
-            gap: 6px;
+            gap: 6rem;
             flex-direction: column;
             align-items: flex-start;
+
+            .text-title {
+              color: var(--color-foreground3);
+            }
+
+            .text-detail {
+              color: var(--color-foreground10);
+            }
+
+            .text-won {
+              color: var(--color-foreground10);
+            }
           }
         }
       }
@@ -204,12 +234,12 @@
       position: relative;
       left: -10px;
       margin-right: var(--main-padding);
-      margin-top: 18px;
+      margin-top: 18rem;
 
       .content1-scroll-body {
         display: block;
         width: 100%;
-        height: 8px;
+        height: customRem4To6(8);
         background: var(--color-background9);
         border-radius: 100px;
         border-width: 10px;
@@ -221,7 +251,7 @@
       .content1-scroll-bar {
         cursor: move;
         width: 0;
-        height: 8px;
+        height: customRem4To6(8);
         position: absolute;
         top: 0;
         left: 0;
@@ -343,17 +373,9 @@
           }
 
           .more-box {
-            display: block;
-            margin-top: 32rem;
-            transition: 500ms;
-            width: 190rem;
-            height: 50px;
-            text-align: center;
 
             .more-text {
-              line-height: 50px;
               color: white;
-              transition: 500ms;
             }
 
             &:hover {
@@ -493,23 +515,16 @@
           }
 
           .more-box {
-            display: block;
             transition: 500ms 100ms;
-            width: 50%;
-            height: 50px;
-            text-align: center;
             background-color: var(--color-background10);
             color: var(--color-foreground10);
+            border: solid 2px var(--color-background10);
             position: absolute;
             top: 54%;
             left: 50%;
             transform: translate(-50%, -50%);
             opacity: 0;
 
-            .more-text {
-              line-height: 50px;
-              transition: 500ms;
-            }
           }
 
           &:hover {
@@ -538,19 +553,13 @@
           }
 
           .more-box {
-            display: block;
             margin-top: 32rem;
             transition: 500ms;
-            width: 50%;
-            height: 50px;
-            text-align: center;
             border: solid 2px var(--color-accent2);
             background-color: transparent;
 
             .more-text {
-              line-height: 50px;
               color: var(--color-accent2);
-              transition: 500ms;
             }
 
             &:hover {
@@ -606,22 +615,24 @@
         position: relative;
 
         .content2-text-list {
-          height: 250px;
+          height: 340rem;
 
           li {
             top: 0;
-            height: 250px;
+            height: 340rem;
             flex-direction: column;
             justify-content: space-between;
             transform: initial;
 
             .text-title {
-              margin-top: 12px;
+              margin-top: 18px;
+              color: var(--color-foreground3);
             }
 
             .text-detail {
-              margin-top: 0;
+              margin-top: 6px;
               display: block;
+              font-size: var(--font-size-base5);
               color: var(--color-foreground10);
               z-index: 2;
             }
@@ -632,6 +643,7 @@
               position: absolute;
               bottom: 0;
             }
+
           }
         }
       }
@@ -660,17 +672,6 @@
 
             .more-box {
               margin-left: initial;
-            }
-          }
-
-          .more-box {
-            border: solid 2px var(--color-accent1);
-            background-color: var(--color-accent1);
-
-            &:hover {
-              .more-text {
-                color: var(--color-accent1);
-              }
             }
           }
         }
@@ -708,17 +709,6 @@
               margin-left: initial;
             }
           }
-
-          .more-box {
-            border: solid 2px var(--color-accent2);
-            background-color: var(--color-accent2);
-
-            &:hover {
-              .more-text {
-                color: var(--color-accent2);
-              }
-            }
-          }
         }
       }
     }
@@ -735,35 +725,15 @@
 
         .content3-inner-wrap {
           gap: 1px;
-
-          .content3-img-wrap {
-
-            .more-box {
-              height: 40px;
-
-              .more-text {
-                line-height: 40px;
-              }
-            }
-          }
-
-          .content3-text-wrap {
-            span {
-              font-size: var(--font-size-base2);
-            }
-
-            .more-box {
-              margin-top: 18px;
-              height: 40px;
-
-              .more-text {
-                line-height: 40px;
-                font-size: var(--font-size-base1);
-              }
-            }
-          }
         }
       }
     }
+  }
+}
+
+@media (max-width : 600px) {
+  .more-box {
+    width: customRem4To6(150);
+    height: customRem4To6(40);
   }
 }

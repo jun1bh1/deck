@@ -8,17 +8,28 @@
   z-index: 99;
 
   .header-wrap {
-    height: 68px;
+    height: 68rem;
+    min-height: 60px;
     display: flex;
     align-items: center;
     padding: 0 var(--main-padding);
     justify-content: space-between;
     z-index: 3;
 
-    .header-logo-link img {
-      width: 136px;
-      z-index: 99;
-      z-index: 2;
+    .header-logo {
+      height: 68rem;
+
+      .header-logo-link {
+        display: flex;
+        height: 68rem;
+        align-items: center;
+
+        img {
+          height: 24rem;
+          min-height: 18px;
+          z-index: 99;
+        }
+      }
     }
 
     .header-navigation {
@@ -31,21 +42,19 @@
 
       .header-navigation-container {
         width: 100%;
-        height: fit-content;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 64rem;
-        font-size: 16px;
         position: absolute;
-        visibility: hidden;
 
         a {
-          line-height: 68px;
+          line-height: 68rem;
           display: block;
           color: white;
           transition: 300ms;
           box-sizing: border-box;
+          font-size: var(--font-size-base2);
 
           &:hover {
             color: var(--color-accent1);
@@ -61,8 +70,10 @@
       z-index: 2;
 
       .icon {
-        width: 30px;
-        height: 30px;
+        width: 36rem;
+        height: 36rem;
+        min-width: 24px;
+        height: 24px;
 
         path {
           transition: 300ms;
@@ -78,8 +89,6 @@
         display: none;
 
         i {
-          width: 30px;
-          height: 30px;
           transition: 300ms;
 
           &:hover {
@@ -104,18 +113,26 @@
   }
 }
 
+@media (min-width : 1024px) {
+
+  .header-navigation-container {
+
+    display: flex;
+  }
+}
+
 @media (max-width : 1024px) {
   .header-frame {
     .header-wrap {
       .header-navigation {
-        top: 68px;
+        top: 40px;
 
         .header-navigation-container {
-          display: flex;
-          flex-direction: column;
-          gap: 0;
+          width: 100%;
+          text-align: center;
           position: relative;
           background-color: rgba($color: #000, $alpha: 0.8);
+          display: none;
         }
       }
 
@@ -123,7 +140,6 @@
         .icon {
           &.icons-cart {
             display: none;
-          
           }
         }
 
@@ -135,7 +151,7 @@
 
     .visual-slider-top-gradation {
       height: 100%;
-      background: rgba($color: #000000, $alpha: 0.8);
+      background: rgba(#000, 0.8)
     }
   }
 }

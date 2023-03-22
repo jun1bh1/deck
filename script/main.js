@@ -233,7 +233,7 @@ $(document).ready(function () {
 
   var content1List = $('#content1List')
   for (var i = 0; i < content1ObjArr.length; i++) {
-    content1List.append('<li class="' + content1ObjArr[i].tag + '"><a href="' + content1ObjArr[i].link + '" class="content1-link" title = "컨텐츠1-' + i + ' 제품  이동" ><div class="content1-img-wrap"><img class="content1-img" src="' + content1ObjArr[i].imgSrc + '" title="컨텐츠1-' + i + ' 아이템 이미지"><img class="content1-logo" src="' + content1ObjArr[i].subImgSrc + '" title="컨텐츠1-' + i + ' 로고 이미지"></div><div class="content1-text-wrap"><span class="text-title gray-f1 font-base1">' + content1ObjArr[i].title + '</span><span class="text-detail gray-f10 font-base1">' + content1ObjArr[i].detail + '</span><span class="text-won gray-f10 font-base1"><span class="text-price gray-f10 font-base2">' + content1ObjArr[i].price + '</span>원~</span></div></a></li>')
+    content1List.append('<li class="' + content1ObjArr[i].tag + '"><a href="' + content1ObjArr[i].link + '" class="content1-link" title = "컨텐츠1-' + i + ' 제품  이동" ><div class="content1-img-wrap"><img class="content1-img" src="' + content1ObjArr[i].imgSrc + '" title="컨텐츠1-' + i + ' 아이템 이미지"><img class="content1-logo" src="' + content1ObjArr[i].subImgSrc + '" title="컨텐츠1-' + i + ' 로고 이미지"></div><div class="content1-text-wrap"><span class="text-title font-base1">' + content1ObjArr[i].title + '</span><span class="text-detail font-base1">' + content1ObjArr[i].detail + '</span><span class="text-won font-base1"><span class="text-price font-base2">' + content1ObjArr[i].price + '</span>원~</span></div></a></li>')
   }
 
   var content2_1ImgList = $('#content2_1ImgList')
@@ -258,6 +258,7 @@ $(document).ready(function () {
     content2_2IndicatorList.append('<li><button class="indicator-btn" title="컨텐트2-1 인디케이터 ' + (i + 1) + '"><i></i></button></li>')
     content2_2TextList.append('<li><span class="content2-text text-title grayf10 font-base3">' + content2_2ObjArr[i].title + '</span><span class="content2-text text-detail grayf10 font-large1">' + content2_2ObjArr[i].detail + '</span><a class="more-box" href="' + content2_2ObjArr[i].link + '" title="컨텐츠1 링크이동"><span class="more-text font-base1">자세히보기</span></a></li>')
   }
+
 
   var content2_3ImgList = $('#content2_3ImgList')
   var content2_3IndicatorList = $('#content2_3IndicatorList')
@@ -334,7 +335,7 @@ $(window).load(function () {
   $('#visualList').on('mouseleave', startVisualInterval)
 
   function startVisualInterval() {
-    visualInterval = setInterval(visualBtnOnClick, 5000, 1)
+    // visualInterval = setInterval(visualBtnOnClick, 5000, 1)
   }
 
   function stopVisualInterval() {
@@ -399,7 +400,7 @@ $(window).load(function () {
 
   // 비주얼 모바일 사이즈 
   $('.icon-menu').on('click', function () {
-    $('.header-navigation-container').slideToggle()
+    $('.header-navigation-container').stop().slideToggle()
   })
 
   // 컨텐츠1
@@ -652,28 +653,17 @@ $(window).load(function () {
       fade.stop(true).fadeOut(time)
       fade.eq(index).stop().delay(time / 2).fadeIn(time)
       fade.eq(index + lastIndex).stop().delay(time / 2).fadeIn(time)
-      // fade.not(index).stop(true).animate({
-      //   'opacity': 0
-      // }, time, function () {
-      //   $(this).css({ 'display': 'none' })
-      // })
-      // // fade.eq(index).css({
-      // //   'display': 'flex'
-      // // }).stop().delay(time / 2).animate({ 'opacity': 1}, time)
-      // fade.eq(index).stop().delay(time / 2).animate({ 'opacity': 1}, time)
-      // // fade.eq(index + lastIndex).stop().delay(time / 2).animate({ 'opacity': 1}, time)
-      // // fade.eq(index + lastIndex).delay(time / 2).css({
-      // //   'display': 'flex'
-      // // }, function () {
-      // //   $(this).animate({ 'display': 'flex' })
-      // // }, time)
     }
   }
 })
 
 // 윈도우 사이즈 변경시 컨텐츠1의 스크롤바가 움직일 수 있는 한도를 조정해야함 
 window.addEventListener('resize', function () {
+  // 윈도우 사이즈가 모바일/웹 전환이 되면 네비게이션바 초기화
+  $('.header-navigation-container').attr('style', '')
+  content1InitScrollBarSize()
   scrollBarContainment()
+
 })
 
 // 스크롤바 좌우 제한 함수
@@ -688,4 +678,31 @@ function scrollBarContainment() {
   scrollBar.draggable("option", "containment", [containmentX1, 0, containmentX2, 0]);
   scrollBar.css({ 'left': 0 })
   content1List.css({ 'left': 0 })
+}
+
+
+//스크롤바 사이즈 변경
+function content1InitScrollBarSize() {
+  var content1ListWidth = $('#content1List').innerWidth()
+  var scrollBarParentWidth = $('#content1ScrollBar').parent().innerWidth()
+  var scrollBar = $('#content1ScrollBar')
+  var content1Wrap = $('#content1Wrap')
+  var content1ScrollBar = $('#content1ScrollBar')
+  // 스크롤바 넓이는 컨텐츠1 아이템이 스크롤되는 비율로 구해줌
+  var scrollBarWidth = scrollBarParentWidth * scrollBarParentWidth / content1ListWidth
+  // 만약 아이템 넓이가 부모의 넓이보다 작을때는 스크롤바가 가득차고 스크롤되는걸 없애야함
+  if (scrollBarWidth >= scrollBarParentWidth) {
+    scrollBarWidth = scrollBarParentWidth
+    content1Wrap.draggable({ disabled: true })
+    content1ScrollBar.draggable({ disabled: true })
+    scrollBar.parent().animate({ opacity: 0.5 })
+  } else {
+    content1Wrap.draggable({ disabled: false })
+    content1ScrollBar.draggable({ disabled: false })
+    scrollBar.parent().animate({ opacity: 1 })
+  }
+  scrollBar.css({
+    'width': scrollBarWidth,
+    opacity: 1
+  })
 }
