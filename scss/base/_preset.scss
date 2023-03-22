@@ -6,7 +6,7 @@
   --main-padding: 80rem;
   --sub-padding: 40rem;
   --click-padding: 4px;
-  --section-spacing: 180rem;
+  --section-spacing: calc(60px + 120rem);
   --font-size-large2: 128rem;
   --font-size-large1: 64rem;
   --font-size-base5: 48rem;
@@ -220,5 +220,19 @@ body {
 @media (max-width : 1024px) {
   :root {
     --main-padding: 18rem;
+  }
+}
+
+
+@media (max-width : 600px) {
+  :root {
+    --section-spacing: 90rem;
+    --font-size-large2: 72rem;
+    --font-size-large1: 36rem;
+    --font-size-base5: 27rem;
+    --font-size-base4: calc(4px + 20rem);
+    --font-size-base3: calc(4px + 20rem);
+    --font-size-base2: calc(4px + 14rem);
+    --font-size-base1: 12rem
   }
 }
