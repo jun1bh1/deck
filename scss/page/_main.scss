@@ -8,7 +8,6 @@
   overflow: hidden;
 }
 
-
 .more-box {
   display: block;
   margin-top: 32rem;
@@ -409,7 +408,7 @@
           right: 0;
 
           .content2-text {
-            background: linear-gradient(to right, white 1120rem, black 1120rem);
+            background: linear-gradient(to right, white 1120rem,  var(--color-foreground10) 1120rem);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: end;
@@ -454,7 +453,7 @@
           left: 0;
 
           .content2-text {
-            background: linear-gradient(to left, white 1120rem, black 1120rem);
+            background: linear-gradient(to left, white 1120rem, var(--color-foreground10) 1120rem);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: start;
@@ -518,7 +517,8 @@
 
           .more-box {
             transition: 500ms 100ms;
-            background-color: var(--color-background10);
+            background-color: var(--color-grayF4);
+            border-color: var(--color-grayF4);;
             color: var(--color-background10);
             position: absolute;
             top: 54%;
@@ -549,7 +549,8 @@
           align-items: center;
           justify-content: center;
 
-          span {
+          h2 {
+            color: var(--color-foreground10);
             text-align: center;
           }
 
@@ -622,6 +623,7 @@
 
       .content2-text-wrap {
         position: relative;
+        padding: initial;
 
         .content2-text-list {
           height: 320rem;
@@ -636,6 +638,7 @@
             .text-title {
               margin-top: 18rem;
               color: var(--color-foreground3);
+              padding: 0 var(--main-padding);
             }
 
             .text-detail {
@@ -643,6 +646,7 @@
               display: block;
               font-size: var(--font-size-base5);
               color: var(--color-foreground10);
+              padding: 0 var(--main-padding);
               z-index: 2;
             }
 
@@ -665,7 +669,6 @@
 
       .content2-text-wrap {
         right: initial;
-        padding: 0 var(--main-padding);
         align-items: flex-start;
 
         .content2-text-list {
@@ -700,7 +703,6 @@
 
       .content2-text-wrap {
         right: initial;
-        padding: 0 var(--main-padding);
         align-items: flex-start;
 
         .content2-text-list {
@@ -749,9 +751,9 @@
       .content2-text-wrap {
 
         .content2-text-list {
-          height: 250rem;
+          height: 220rem;
           li {
-            height: 250rem;
+            height: 220rem;
           }
         }
       }

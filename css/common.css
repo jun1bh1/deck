@@ -176,94 +176,6 @@ body {
   font-family: var(--font-title);
 }
 
-.gray-b10 {
-  color: var(--color-background10);
-}
-
-.gray-b9 {
-  color: var(--color-background9);
-}
-
-.gray-b8 {
-  color: var(--color-background8);
-}
-
-.gray-b7 {
-  color: var(--color-background7);
-}
-
-.gray-b6 {
-  color: var(--color-background6);
-}
-
-.gray-b5 {
-  color: var(--color-background5);
-}
-
-.gray-b4 {
-  color: var(--color-background4);
-}
-
-.gray-b3 {
-  color: var(--color-background3);
-}
-
-.gray-b2 {
-  color: var(--color-background2);
-}
-
-.gray-b1 {
-  color: var(--color-background1);
-}
-
-.gray-b0 {
-  color: var(--color-background0);
-}
-
-.gray-f10 {
-  color: var(--color-foreground10);
-}
-
-.gray-f9 {
-  color: var(--color-foreground9);
-}
-
-.gray-f8 {
-  color: var(--color-foreground8);
-}
-
-.gray-f7 {
-  color: var(--color-foreground7);
-}
-
-.gray-f6 {
-  color: var(--color-foreground6);
-}
-
-.gray-f5 {
-  color: var(--color-foreground5);
-}
-
-.gray-f4 {
-  color: var(--color-foreground4);
-}
-
-.gray-f3 {
-  color: var(--color-foreground3);
-}
-
-.gray-f2 {
-  color: var(--color-foreground2);
-}
-
-.gray-f1 {
-  color: var(--color-foreground1);
-}
-
-.gray-f0 {
-  color: var(--color-foreground0);
-}
-
 @media (max-width: 960px) {
   :root {
     font-size: 0.5px;
@@ -289,6 +201,32 @@ body {
     --font-size-base3: calc(4px + 20rem);
     --font-size-base2: calc(4px + 14rem);
     --font-size-base1: 12rem ;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-foreground10: #FFFFFF;
+    --color-foreground9: #F5F5F5;
+    --color-foreground8: #EAEAEA;
+    --color-foreground7: #E0E0E0;
+    --color-foreground6: #D6D6D6;
+    --color-foreground5: #C1C1C1;
+    --color-foreground4: #ADADAD;
+    --color-foreground3: #989898;
+    --color-foreground2: #838383;
+    --color-foreground1: #6F6F6F;
+    --color-foreground0: #5A5A5A;
+    --color-background10: #111111;
+    --color-background9: #454545;
+    --color-background8: #5A5A5A;
+    --color-background7: #5A5A5A;
+    --color-background6: #6F6F6F;
+    --color-background5: #6F6F6F;
+    --color-background4: #838383;
+    --color-background3: #838383;
+    --color-background2: #989898;
+    --color-background1: #989898;
+    --color-background0: #989898;
   }
 }
 /* 글씨크기 : em, 프리셋 바디에서 16px로 잡아서 16px를 기준으로 직관적으로 크기를 가늠할 수 있음
@@ -317,7 +255,6 @@ body {
 }
 .header-frame .header-wrap .header-logo .header-logo-link img {
   height: 24rem;
-  min-height: 18px;
   z-index: 99;
 }
 .header-frame .header-wrap .header-navigation {
@@ -356,8 +293,6 @@ body {
 .header-frame .header-wrap .header-icons .icon {
   width: 36rem;
   height: 36rem;
-  min-width: 24px;
-  height: 24px;
 }
 .header-frame .header-wrap .header-icons .icon path {
   transition: 300ms;
@@ -421,14 +356,14 @@ footer {
 footer .footer-top-wrap {
   width: 100%;
   height: calc(28.8px + 43.2rem);
-  background-color: black;
+  background-color: var(--color-black00);
   display: flex;
   gap: 40rem;
   justify-content: center;
   align-items: center;
 }
 footer .footer-top-wrap a {
-  color: white;
+  color: var(--color-grayF4);
   padding: 4px;
 }
 footer .footer-bottom-wrap {
@@ -870,7 +805,7 @@ footer .footer-bottom-wrap img {
   right: 0;
 }
 .content2-wrap .left-side .content2-text-wrap .content2-text-list li .content2-text {
-  background: linear-gradient(to right, white 1120rem, black 1120rem);
+  background: linear-gradient(to right, white 1120rem, var(--color-foreground10) 1120rem);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: end;
@@ -901,7 +836,7 @@ footer .footer-bottom-wrap img {
   left: 0;
 }
 .content2-wrap .right-side .content2-text-wrap .content2-text-list li .content2-text {
-  background: linear-gradient(to left, white 1120rem, black 1120rem);
+  background: linear-gradient(to left, white 1120rem, var(--color-foreground10) 1120rem);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: start;
@@ -955,7 +890,8 @@ footer .footer-bottom-wrap img {
 }
 .content3-wrap .content3-rec-wrap .content3-outer-wrap .content3-inner-wrap .content3-img-wrap .more-box {
   transition: 500ms 100ms;
-  background-color: var(--color-background10);
+  background-color: var(--color-grayF4);
+  border-color: var(--color-grayF4);
   color: var(--color-background10);
   position: absolute;
   top: 54%;
@@ -979,7 +915,8 @@ footer .footer-bottom-wrap img {
   align-items: center;
   justify-content: center;
 }
-.content3-wrap .content3-rec-wrap .content3-outer-wrap .content3-inner-wrap .content3-text-wrap span {
+.content3-wrap .content3-rec-wrap .content3-outer-wrap .content3-inner-wrap .content3-text-wrap h2 {
+  color: var(--color-foreground10);
   text-align: center;
 }
 .content3-wrap .content3-rec-wrap .content3-outer-wrap .content3-inner-wrap .content3-text-wrap .more-box {
@@ -1034,6 +971,7 @@ footer .footer-bottom-wrap img {
   }
   .content2-wrap .content2-item-wrap .content2-text-wrap {
     position: relative;
+    padding: initial;
   }
   .content2-wrap .content2-item-wrap .content2-text-wrap .content2-text-list {
     height: 320rem;
@@ -1048,12 +986,14 @@ footer .footer-bottom-wrap img {
   .content2-wrap .content2-item-wrap .content2-text-wrap .content2-text-list li .text-title {
     margin-top: 18rem;
     color: var(--color-foreground3);
+    padding: 0 var(--main-padding);
   }
   .content2-wrap .content2-item-wrap .content2-text-wrap .content2-text-list li .text-detail {
     margin-top: 6rem;
     display: block;
     font-size: var(--font-size-base5);
     color: var(--color-foreground10);
+    padding: 0 var(--main-padding);
     z-index: 2;
   }
   .content2-wrap .content2-item-wrap .content2-text-wrap .content2-text-list li .more-box {
@@ -1067,7 +1007,6 @@ footer .footer-bottom-wrap img {
   }
   .content2-wrap .left-side .content2-text-wrap {
     right: initial;
-    padding: 0 var(--main-padding);
     align-items: flex-start;
   }
   .content2-wrap .left-side .content2-text-wrap .content2-text-list li {
@@ -1091,7 +1030,6 @@ footer .footer-bottom-wrap img {
   }
   .content2-wrap .right-side .content2-text-wrap {
     right: initial;
-    padding: 0 var(--main-padding);
     align-items: flex-start;
   }
   .content2-wrap .right-side .content2-text-wrap .content2-text-list li {
@@ -1121,10 +1059,10 @@ footer .footer-bottom-wrap img {
     margin-top: -39.375rem;
   }
   .content2-wrap .content2-item-wrap .content2-text-wrap .content2-text-list {
-    height: 250rem;
+    height: 220rem;
   }
   .content2-wrap .content2-item-wrap .content2-text-wrap .content2-text-list li {
-    height: 250rem;
+    height: 220rem;
   }
   .visual-wrap {
     height: 650rem;

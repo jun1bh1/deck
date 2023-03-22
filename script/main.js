@@ -118,7 +118,6 @@ const content3Json = [
       "linkUrl": "#311",
       "buttonClass": [
         "more-text",
-        "gray-f10",
         "font-base1"
       ]
     },
@@ -129,7 +128,6 @@ const content3Json = [
       "linkUrl": "#312",
       "buttonClass": [
         "more-text",
-        "gray-f10",
         "font-base1"
       ]
     },
@@ -140,7 +138,6 @@ const content3Json = [
       "linkUrl": "#313",
       "buttonClass": [
         "more-text",
-        "gray-f10",
         "font-base1"
       ]
     },
@@ -153,7 +150,6 @@ const content3Json = [
       "linkUrl": "#321",
       "buttonClass": [
         "more-text",
-        "gray-f10",
         "font-base1"
       ]
     },
@@ -163,7 +159,6 @@ const content3Json = [
       "detailText": "커스텀</br>&</br>악세서리",
       "linkUrl": "#323",
       "detailTextClass": [
-        "gray-f10",
         "font-base4"
       ],
       "buttonClass": [
@@ -178,7 +173,6 @@ const content3Json = [
       "linkUrl": "#322",
       "buttonClass": [
         "more-text",
-        "gray-f10",
         "font-base1"
       ]
     },
@@ -191,7 +185,6 @@ const content3Json = [
       "linkUrl": "#331",
       "buttonClass": [
         "more-text",
-        "gray-f10",
         "font-base1"
       ]
     },
@@ -202,7 +195,6 @@ const content3Json = [
       "linkUrl": "#332",
       "buttonClass": [
         "more-text",
-        "gray-f10",
         "font-base1"
       ]
     },
@@ -213,7 +205,6 @@ const content3Json = [
       "linkUrl": "#333",
       "buttonClass": [
         "more-text",
-        "gray-f10",
         "font-base1"
       ]
     }
@@ -278,7 +269,7 @@ $(document).ready(function () {
       if (wrapType.hasClass('content3-img-wrap')) {
         wrapType.prepend(`<img src="${content3Data[i][j].imgSrc}" alt="">`)
       } else {
-        wrapType.prepend(`<span class="${content3Data[i][j].detailTextClass.toString().replace(/,/g, ' ')}">커스텀</br>&</br>악세서리</span>`)
+        wrapType.prepend(`<h2 class="content3-title ${content3Data[i][j].detailTextClass.toString().replace(/,/g, ' ')}">커스텀</br>&</br>악세서리</span>`)
       }
     }
   }
@@ -530,13 +521,13 @@ $(window).load(function () {
     // 드래그 종료 시간
     var endTime = Date.now()
     // 드래그 경과 시간
-    var elapsedTime = (endTime - startTime) / 1000
+    var dragTime = (endTime - startTime) / 1000
     // 드래그 종료시 x축 위치
     var posXAtEnd = parseInt(mainItem.css('left'))
     // 드래그 종료시 움직인 거리
     var posXMovedDistance = posXAtEnd - posXAtStart
     // 경과시간이 0초일때 0.0625가 나오고 커질수록 14 만큼 더 빠르게 무한해지는 가중치
-    var weight = (Math.pow(2, elapsedTime * 14 - 4))
+    var weight = (Math.pow(2, dragTime * 14 - 4))
     // 아이템이 관성 이후 왼쪽 위치를 구함, 종료시 위치에서 움직인거리를 가중치로 나눠줌
     // 빠르게 놨을 때 관성이 쎄고 느리게 놨을 때 관성이 줄어듦
     // 길게 움직였을때 관성이 쎄고 짧게 움직였을 때 관성이 줄어듦

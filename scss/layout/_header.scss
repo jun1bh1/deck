@@ -26,7 +26,6 @@
 
         img {
           height: 24rem;
-          min-height: 18px;
           z-index: 99;
         }
       }
@@ -72,8 +71,6 @@
       .icon {
         width: 36rem;
         height: 36rem;
-        min-width: 24px;
-        height: 24px;
 
         path {
           transition: 300ms;
