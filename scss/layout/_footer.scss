@@ -1,19 +1,18 @@
 footer {
   margin-top: 180rem;
-  background-color: var(--color-black22);
   line-height: normal;
 
   .footer-top-wrap {
     width: 100%;
-    height: customRem4To6(72);
-    background-color: var(--color-black00);
+    height: customRem(72);
+    background-color: var(--color-black);
     display: flex;
     gap: 40rem;
     justify-content: center;
     align-items: center;
 
     a {
-      color: var(--color-grayF4);
+      color: #f4f4f4;
       padding: 4px;
     }
   }
@@ -21,7 +20,8 @@ footer {
   .footer-bottom-wrap {
     padding: 48rem var(--main-padding) 36rem;
     text-align: center;
-    color: var(--color-gray88);
+    color: #838383;
+    background-color: var(--color-blackLight);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,8 +37,8 @@ footer {
     }
 
     img {
-      width: customRem4To6(50);
-      height: customRem4To6(50);
+      width: customRem(50);
+      height: customRem(50);
     }
   }
 }

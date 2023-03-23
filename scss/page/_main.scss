@@ -1,7 +1,4 @@
-//글씨크기 : em, 프리셋 바디에서 16px로 잡아서 16px를 기준으로 직관적으로 크기를 가늠할 수 있음
-//고정크기 : px, 랩퍼의 높이, 요소의 크기, 클릭 요소의 패딩
-//반응형크기 : rem, vw를 기준으로 최대최소 설정한 넓이 내에서 변동 섹션의 크기, 요소의 넓이, 요소간 패딩(gap), 마진, 절대위치
-//인디케이터는 고정크기, 간격
+// 반응형으로 만들기 위해 단위는 rem
 .main-frame {
   width: 100%;
   // min-width: $minWidth;
@@ -12,10 +9,10 @@
   display: block;
   margin-top: 32rem;
   transition: 500ms;
-  width: customRem4To6(190);
-  height: customRem4To6(50);
+  width: customRem(190);
+  height: customRem(50);
   border-style: solid;
-  border-width: calc(1px + 1rem);
+  border-width: customRem(2, 50);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,6 +35,7 @@
     height: 900rem;
     display: flex;
     position: relative;
+    // // 무한슬라이드 연습, 스크립트에 startVisualInterval 를 꺼야함
     // animation: infiniteScroll linear infinite 3s;
 
     // @keyframes infiniteScroll {
@@ -46,7 +44,7 @@
     //   }
 
     //   100% {
-    //     left: calc(-400% - (100px * 4));
+    //     left: -400%;
     //   }
     // }
 
@@ -240,7 +238,7 @@
       .content1-scroll-body {
         display: block;
         width: 100%;
-        height: customRem4To6(8);
+        height: customRem(8);
         background: var(--color-background9);
         border-radius: 100px;
         border-width: 10px;
@@ -252,7 +250,7 @@
       .content1-scroll-bar {
         cursor: move;
         width: 0;
-        height: customRem4To6(8);
+        height: customRem(8);
         position: absolute;
         top: 0;
         left: 0;
@@ -388,6 +386,7 @@
     }
   }
 
+  // 같은 요소지만 오른쪽 왼쪽으로 분류가 되어있어서 위치에 대한 옵션은 따로 모아두고 클래스명으로 오른쪽 왼쪽 각각 맞는 위치와 색을 정해줌
   .left-side {
     .content2-title {
       left: var(--main-padding);
@@ -408,10 +407,12 @@
           right: 0;
 
           .content2-text {
-            background: linear-gradient(to right, white 1120rem,  var(--color-foreground10) 1120rem);
+            text-align: end;
+            // 백그라운드 왼쪽은 하얀색 오른쪽은 검은색
+            background: linear-gradient(to right, white 1120rem, var(--color-foreground10) 1120rem);
+            // 텍스트를 백그라운드에 클리핑해서 백그라운드 색을 텍스트에 넣어줌
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-align: end;
           }
 
           .more-box {
@@ -453,10 +454,10 @@
           left: 0;
 
           .content2-text {
+            text-align: start;
             background: linear-gradient(to left, white 1120rem, var(--color-foreground10) 1120rem);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-align: start;
           }
 
           .more-box {
@@ -517,9 +518,9 @@
 
           .more-box {
             transition: 500ms 100ms;
-            background-color: var(--color-grayF4);
-            border-color: var(--color-grayF4);;
-            color: var(--color-background10);
+            background-color: var(--color-background9);
+            border-color: var(--color-background9);
+            color: var(--color-foreground10);
             position: absolute;
             top: 54%;
             left: 50%;
@@ -578,9 +579,11 @@
   }
 }
 
+// 1024이하에서는 태블릿모드로 레이아웃이 크게 변경되는 부분
 @media (max-width : 1024px) {
 
   .visual-wrap {
+    margin-top: customRem(68);
     height: 800rem;
 
     .visual-list {
@@ -742,16 +745,19 @@
   }
 }
 
+// 모바일 사이즈에서는 요소 자체에 영향을 미치는 preset이 몇가지 바뀌므로 해당 내용에 맞춰 몇가지 내용을 변경해야 함
 @media (max-width : 600px) {
   .content2-wrap {
     .content2-item-wrap {
       .content2-title {
         margin-top: -39.375rem;
       }
+
       .content2-text-wrap {
 
         .content2-text-list {
           height: 220rem;
+
           li {
             height: 220rem;
           }
@@ -769,8 +775,7 @@
   }
 
   .more-box {
-    width: customRem4To6(120);
-    height: customRem4To6(38);
-    font-size: 10px;
+    width: customRem(120);
+    height: customRem(38);
   }
 }

@@ -84,10 +84,10 @@ button {
   --font-size-base1: calc(8px + 8rem);
   --color-accent1: #EA7178;
   --color-accent2: #7799CC;
-  --color-black00: #000;
-  --color-black22: #222;
+  --color-black: #080808;
+  --color-blackLight: #1C1C1C;
   --color-white: #fff;
-  --color-gray88: #888;
+  --color-gray83: #838383;
   --color-grayF4: #f4f4f4;
   --color-background10: #FFFFFF;
   --color-background9: #F5F5F5;
@@ -205,18 +205,7 @@ body {
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-foreground10: #FFFFFF;
-    --color-foreground9: #F5F5F5;
-    --color-foreground8: #EAEAEA;
-    --color-foreground7: #E0E0E0;
-    --color-foreground6: #D6D6D6;
-    --color-foreground5: #C1C1C1;
-    --color-foreground4: #ADADAD;
-    --color-foreground3: #989898;
-    --color-foreground2: #838383;
-    --color-foreground1: #6F6F6F;
-    --color-foreground0: #5A5A5A;
-    --color-background10: #111111;
+    --color-background10: #1C1C1C;
     --color-background9: #454545;
     --color-background8: #5A5A5A;
     --color-background7: #5A5A5A;
@@ -227,11 +216,19 @@ body {
     --color-background2: #989898;
     --color-background1: #989898;
     --color-background0: #989898;
+    --color-foreground10: #F5F5F5;
+    --color-foreground9: #EAEAEA;
+    --color-foreground8: #EAEAEA;
+    --color-foreground7: #E0E0E0;
+    --color-foreground6: #E0E0E0;
+    --color-foreground5: #D6D6D6;
+    --color-foreground4: #D6D6D6;
+    --color-foreground3: #C1C1C1;
+    --color-foreground2: #C1C1C1;
+    --color-foreground1: #ADADAD;
+    --color-foreground0: #ADADAD;
   }
 }
-/* 글씨크기 : em, 프리셋 바디에서 16px로 잡아서 16px를 기준으로 직관적으로 크기를 가늠할 수 있음
-고정크기 : px, 랩퍼의 높이, 요소의 크기, 클릭 요소의 패딩
-반응형크기 : rem, vw를 기준으로 최대최소 설정한 넓이 내에서 변동 섹션의 크기, 요소의 넓이, 요소간 패딩, 마진 */
 .header-frame {
   width: 100%;
   position: absolute;
@@ -272,9 +269,10 @@ body {
   justify-content: center;
   gap: 64rem;
   position: absolute;
+  padding-bottom: 18rem;
 }
 .header-frame .header-wrap .header-navigation .header-navigation-container a {
-  line-height: 60px;
+  padding: 18rem;
   display: block;
   color: white;
   transition: 300ms;
@@ -310,7 +308,7 @@ body {
 .header-frame .header-wrap .header-icons .icon-menu i:hover {
   color: var(--color-accent1);
 }
-.header-frame .visual-slider-top-gradation {
+.header-frame .header-background {
   content: "";
   position: absolute;
   top: 0;
@@ -328,7 +326,7 @@ body {
 }
 @media (max-width: 1024px) {
   .header-frame .header-wrap .header-navigation {
-    top: 40px;
+    top: calc(27.2px + 40.8rem);
   }
   .header-frame .header-wrap .header-navigation .header-navigation-container {
     width: 100%;
@@ -343,33 +341,33 @@ body {
   .header-frame .header-wrap .header-icons .icon-menu {
     display: initial;
   }
-  .header-frame .visual-slider-top-gradation {
+  .header-frame .header-background {
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--color-black);
   }
 }
 footer {
   margin-top: 180rem;
-  background-color: var(--color-black22);
   line-height: normal;
 }
 footer .footer-top-wrap {
   width: 100%;
   height: calc(28.8px + 43.2rem);
-  background-color: var(--color-black00);
+  background-color: var(--color-black);
   display: flex;
   gap: 40rem;
   justify-content: center;
   align-items: center;
 }
 footer .footer-top-wrap a {
-  color: var(--color-grayF4);
+  color: #f4f4f4;
   padding: 4px;
 }
 footer .footer-bottom-wrap {
   padding: 48rem var(--main-padding) 36rem;
   text-align: center;
-  color: var(--color-gray88);
+  color: #838383;
+  background-color: var(--color-blackLight);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -805,10 +803,10 @@ footer .footer-bottom-wrap img {
   right: 0;
 }
 .content2-wrap .left-side .content2-text-wrap .content2-text-list li .content2-text {
+  text-align: end;
   background: linear-gradient(to right, white 1120rem, var(--color-foreground10) 1120rem);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-align: end;
 }
 .content2-wrap .left-side .content2-text-wrap .content2-text-list li .more-box {
   margin-left: auto;
@@ -836,10 +834,10 @@ footer .footer-bottom-wrap img {
   left: 0;
 }
 .content2-wrap .right-side .content2-text-wrap .content2-text-list li .content2-text {
+  text-align: start;
   background: linear-gradient(to left, white 1120rem, var(--color-foreground10) 1120rem);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-align: start;
 }
 .content2-wrap .right-side .content2-text-wrap .content2-text-list li .more-box {
   margin-right: auto;
@@ -890,9 +888,9 @@ footer .footer-bottom-wrap img {
 }
 .content3-wrap .content3-rec-wrap .content3-outer-wrap .content3-inner-wrap .content3-img-wrap .more-box {
   transition: 500ms 100ms;
-  background-color: var(--color-grayF4);
-  border-color: var(--color-grayF4);
-  color: var(--color-background10);
+  background-color: var(--color-background9);
+  border-color: var(--color-background9);
+  color: var(--color-foreground10);
   position: absolute;
   top: 54%;
   left: 50%;
@@ -937,6 +935,7 @@ footer .footer-bottom-wrap img {
 
 @media (max-width: 1024px) {
   .visual-wrap {
+    margin-top: calc(27.2px + 40.8rem);
     height: 800rem;
   }
   .visual-wrap .visual-list {
@@ -1073,6 +1072,5 @@ footer .footer-bottom-wrap img {
   .more-box {
     width: calc(48px + 72rem);
     height: calc(15.2px + 22.8rem);
-    font-size: 10px;
   }
 }/*# sourceMappingURL=common.css.map */
