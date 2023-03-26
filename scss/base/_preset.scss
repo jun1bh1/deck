@@ -8,14 +8,13 @@
   --main-padding: 80rem;
   --sub-padding: 40rem;
   --click-padding: 4px;
-  --section-spacing: calc(60px + 120rem);
-  --font-size-large2: 128rem;
-  --font-size-large1: 64rem;
-  --font-size-base5: 48rem;
-  --font-size-base4: 32rem;
-  --font-size-base3: calc(8px + 16rem);
+  --section-spacing: 180rem;
+  --font-size-large3: 128rem;
+  --font-size-large2: 64rem;
+  --font-size-large1: 42rem;
+  --font-size-base3: calc(9px + 10rem);
   --font-size-base2: calc(8px + 10rem);
-  --font-size-base1: calc(8px + 8rem);
+  --font-size-base1: calc(7px + 10rem);
   --color-accent1: #EA7178;
   --color-accent2: #7799CC;
   --color-black: #080808;
@@ -97,17 +96,17 @@ body {
   font-size: var(--font-size-base3);
 }
 
-.font-base4 {
-  font-size: var(--font-size-base4);
-}
-
 .font-large1 {
   font-size: var(--font-size-large1);
-  font-weight: bold;
 }
 
 .font-large2 {
   font-size: var(--font-size-large2);
+  font-weight: bold;
+}
+
+.font-large3 {
+  font-size: var(--font-size-large3);
   font-family: var(--font-title);
 }
 
@@ -123,14 +122,12 @@ body {
 
 
 // 1281~1920에서는 vw, rem을 사용하여 내부 요소의 사이즈를 조절하여 전체적인 디자인이 동일한 느낌을 주도록 함
-// 960보다 작아지거나 1920보다 커지면 요소의 사이즈를 고정하여 요소가 너무 작아지거나 커지는것을 방지하여 가독성을 살림
-@media (max-width : 960px) {
+// 640보다 작아지거나 1920보다 커지면 요소의 사이즈를 고정하여 요소가 너무 작아지거나 커지는것을 방지하여 가독성을 살림
+@media (max-width : 640px) {
   :root {
-    font-size: 0.5px;
+    // font-size: 0.5px;
+    font-size: 0.3333333px;
   }
-
-  // 1281~1920에서는 vw, rem을 사용하여 내부 요소의 사이즈를 조절하여 전체적인 디자인이 동일한 느낌을 주도록 함
-  // 960보다 작아지거나 1920보다 커지면 요소의 사이즈를 고정하여 요소가 너무 작아지거나 커지는것을 방지하여 가독성을 살림
 }
 
 @media (min-width : 1920px) {
@@ -142,21 +139,7 @@ body {
 // 1024는 태블릿 사이즈로 요소의 변경이 들어감
 @media (max-width : 1024px) {
   :root {
-    --main-padding: 18rem;
-  }
-}
-
-
-@media (max-width : 600px) {
-  :root {
-    --section-spacing: 90rem;
-    --font-size-large2: 72rem;
-    --font-size-large1: 36rem;
-    --font-size-base5: 27rem;
-    --font-size-base4: calc(4px + 20rem);
-    --font-size-base3: calc(4px + 20rem);
-    --font-size-base2: calc(4px + 14rem);
-    --font-size-base1: 12rem
+    --main-padding: 24rem;
   }
 }
 

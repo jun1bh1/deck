@@ -629,17 +629,16 @@
         padding: initial;
 
         .content2-text-list {
-          height: 320rem;
 
           li {
             top: 0;
-            height: 320rem;
+            position: relative;
             flex-direction: column;
             justify-content: space-between;
             transform: initial;
 
             .text-title {
-              margin-top: 18rem;
+              margin-top: 24rem;
               color: var(--color-foreground3);
               padding: 0 var(--main-padding);
             }
@@ -647,17 +646,14 @@
             .text-detail {
               margin-top: 6rem;
               display: block;
-              font-size: var(--font-size-base5);
               color: var(--color-foreground10);
               padding: 0 var(--main-padding);
               z-index: 2;
             }
 
             .more-box {
-              margin-top: 0;
+              margin-top: 18rem;
               width: 100%;
-              position: absolute;
-              bottom: 0;
             }
 
           }
@@ -745,37 +741,9 @@
   }
 }
 
-// 모바일 사이즈에서는 요소 자체에 영향을 미치는 preset이 몇가지 바뀌므로 해당 내용에 맞춰 몇가지 내용을 변경해야 함
-@media (max-width : 600px) {
-  .content2-wrap {
-    .content2-item-wrap {
-      .content2-title {
-        margin-top: -39.375rem;
-      }
-
-      .content2-text-wrap {
-
-        .content2-text-list {
-          height: 220rem;
-
-          li {
-            height: 220rem;
-          }
-        }
-      }
-    }
-  }
-
-  .visual-wrap {
-    height: 650rem;
-
-    .visual-list {
-      height: 650rem;
-    }
-  }
-
+@media (max-width : 640px) {
   .more-box {
-    width: customRem(120);
-    height: customRem(38);
+    width: customRem(160);
+    height: customRem(50);
   }
 }
