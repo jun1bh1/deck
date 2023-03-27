@@ -961,9 +961,13 @@ footer .footer-bottom-wrap img {
     position: relative;
     padding: initial;
   }
+  .content2-wrap .content2-item-wrap .content2-text-wrap .content2-text-list {
+    height: calc(32.1px + 288.9rem);
+  }
   .content2-wrap .content2-item-wrap .content2-text-wrap .content2-text-list li {
+    height: calc(32.1px + 288.9rem);
+    position: absolute;
     top: 0;
-    position: relative;
     flex-direction: column;
     justify-content: space-between;
     transform: initial;

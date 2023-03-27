@@ -629,10 +629,13 @@
         padding: initial;
 
         .content2-text-list {
+          height: customRem(321,90);
 
           li {
+            height: customRem(321,90);
+            position: absolute;
+            // position: relative;
             top: 0;
-            position: relative;
             flex-direction: column;
             justify-content: space-between;
             transform: initial;
