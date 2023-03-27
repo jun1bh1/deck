@@ -133,7 +133,8 @@ var content3Json = [
       "detailText": "커스텀",
       "linkUrl": "#321",
       "detailTextClass": [
-        "font-large1"
+        "font-large1",
+        
       ],
       "buttonClass": [
         "more-text",
@@ -141,7 +142,7 @@ var content3Json = [
       ]
     },
     {
-      "no": 6,
+      "no": 5,
       "wrapClass": "content3-img-wrap",
       "imgSrc": "images/main3_4.png",
       "linkUrl": "#322",

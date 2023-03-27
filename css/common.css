@@ -901,6 +901,7 @@ footer .footer-bottom-wrap img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-background9);
 }
 .content3-wrap .content3-rec-wrap .content3-outer-wrap .content3-inner-wrap .content3-text-wrap h2 {
   color: var(--color-foreground10);
