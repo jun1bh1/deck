@@ -197,107 +197,107 @@ var content3Json = [
     }
   ]
 ]
-var content3Json = [
-  [
-    {
-      "no": 1,
-      "wrapClass": "content3-img-wrap",
-      "imgSrc": "images/main3_1.png",
-      "linkUrl": "#311",
-      "buttonClass": [
-        "more-text",
-        "font-base1"
-      ]
-    },
-    {
-      "no": 2,
-      "wrapClass": "content3-img-wrap",
-      "imgSrc": "images/main3_2.png",
-      "linkUrl": "#312",
-      "buttonClass": [
-        "more-text",
-        "font-base1"
-      ]
-    },
-    {
-      "no": 3,
-      "wrapClass": "content3-img-wrap",
-      "imgSrc": "images/main3_3.png",
-      "linkUrl": "#313",
-      "buttonClass": [
-        "more-text",
-        "font-base1"
-      ]
-    },
-  ],
-  [
-    {
-      "no": 4,
-      "wrapClass": "content3-img-wrap",
-      "imgSrc": "images/main3_4.png",
-      "linkUrl": "#321",
-      "buttonClass": [
-        "more-text",
-        "font-base1"
-      ]
-    },
-    {
-      "no": 5,
-      "wrapClass": "content3-text-wrap",
-      "detailText": "커스텀</br>&</br>악세서리",
-      "linkUrl": "#323",
-      "detailTextClass": [
-        "font-large1"
-      ],
-      "buttonClass": [
-        "more-text",
-        "font-base1"
-      ]
-    },
-    {
-      "no": 6,
-      "wrapClass": "content3-img-wrap",
-      "imgSrc": "images/main3_6.png",
-      "linkUrl": "#322",
-      "buttonClass": [
-        "more-text",
-        "font-base1"
-      ]
-    },
-  ],
-  [
-    {
-      "no": 7,
-      "wrapClass": "content3-img-wrap",
-      "imgSrc": "images/main3_7.png",
-      "linkUrl": "#331",
-      "buttonClass": [
-        "more-text",
-        "font-base1"
-      ]
-    },
-    {
-      "no": 8,
-      "wrapClass": "content3-img-wrap",
-      "imgSrc": "images/main3_8.png",
-      "linkUrl": "#332",
-      "buttonClass": [
-        "more-text",
-        "font-base1"
-      ]
-    },
-    {
-      "no": 9,
-      "wrapClass": "content3-img-wrap",
-      "imgSrc": "images/main3_9.png",
-      "linkUrl": "#333",
-      "buttonClass": [
-        "more-text",
-        "font-base1"
-      ]
-    }
-  ]
-]
+// var content3Json = [
+//   [
+//     {
+//       "no": 1,
+//       "wrapClass": "content3-img-wrap",
+//       "imgSrc": "images/main3_1.png",
+//       "linkUrl": "#311",
+//       "buttonClass": [
+//         "more-text",
+//         "font-base1"
+//       ]
+//     },
+//     {
+//       "no": 2,
+//       "wrapClass": "content3-img-wrap",
+//       "imgSrc": "images/main3_2.png",
+//       "linkUrl": "#312",
+//       "buttonClass": [
+//         "more-text",
+//         "font-base1"
+//       ]
+//     },
+//     {
+//       "no": 3,
+//       "wrapClass": "content3-img-wrap",
+//       "imgSrc": "images/main3_3.png",
+//       "linkUrl": "#313",
+//       "buttonClass": [
+//         "more-text",
+//         "font-base1"
+//       ]
+//     },
+//   ],
+//   [
+//     {
+//       "no": 4,
+//       "wrapClass": "content3-img-wrap",
+//       "imgSrc": "images/main3_4.png",
+//       "linkUrl": "#321",
+//       "buttonClass": [
+//         "more-text",
+//         "font-base1"
+//       ]
+//     },
+//     {
+//       "no": 5,
+//       "wrapClass": "content3-text-wrap",
+//       "detailText": "커스텀</br>&</br>악세서리",
+//       "linkUrl": "#323",
+//       "detailTextClass": [
+//         "font-large1"
+//       ],
+//       "buttonClass": [
+//         "more-text",
+//         "font-base1"
+//       ]
+//     },
+//     {
+//       "no": 6,
+//       "wrapClass": "content3-img-wrap",
+//       "imgSrc": "images/main3_6.png",
+//       "linkUrl": "#322",
+//       "buttonClass": [
+//         "more-text",
+//         "font-base1"
+//       ]
+//     },
+//   ],
+//   [
+//     {
+//       "no": 7,
+//       "wrapClass": "content3-img-wrap",
+//       "imgSrc": "images/main3_7.png",
+//       "linkUrl": "#331",
+//       "buttonClass": [
+//         "more-text",
+//         "font-base1"
+//       ]
+//     },
+//     {
+//       "no": 8,
+//       "wrapClass": "content3-img-wrap",
+//       "imgSrc": "images/main3_8.png",
+//       "linkUrl": "#332",
+//       "buttonClass": [
+//         "more-text",
+//         "font-base1"
+//       ]
+//     },
+//     {
+//       "no": 9,
+//       "wrapClass": "content3-img-wrap",
+//       "imgSrc": "images/main3_9.png",
+//       "linkUrl": "#333",
+//       "buttonClass": [
+//         "more-text",
+//         "font-base1"
+//       ]
+//     }
+//   ]
+// ]
 const content3Data = JSON.parse(JSON.stringify(content3Json));
 
 //레디
